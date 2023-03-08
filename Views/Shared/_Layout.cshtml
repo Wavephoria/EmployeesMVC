@@ -2,10 +2,19 @@
 <html>
 <head>
     <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
 </head>
-<body>
+<body style="background-color: burlywood">
 <h1>Employees</h1>
 @RenderBody()
 
+<a asp-controller="Home" asp-action="Index" style="color: darkred">List of Employees</a>
+<br/>
+<a asp-controller="Home" asp-action="CreateEmployee" style="color: darkred">Add Employee</a>
+<br/>
+<partial name="_TimeBox" model="DateTime.Now"/>
+@RenderSection("endOfBody", false)
 </body>
+
+<footer style="color: crimson">© Jens Gustafsson</footer>
 </html>

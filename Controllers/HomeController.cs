@@ -25,4 +25,10 @@ public class HomeController : Controller
         _dataService.AddEmployee(employee);
         return RedirectToAction(nameof(Index));
     }
+    [HttpGet("/details/{id}")]
+    public IActionResult DetailsEmployee(int id)
+    {
+        Employee employee = _dataService.GetById(id);
+        return View(employee);
+    }
 }

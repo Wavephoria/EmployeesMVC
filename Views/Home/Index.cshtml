@@ -1,13 +1,14 @@
-@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
-@model EmployeesMVC.Models.Employee[]
+
+@model Employee[]
 
 <div>
+    <h4>List of employees</h4>
     @foreach (var item in Model)
     {
-        @item.Name
+        <a asp-controller="Home" asp-action="DetailsEmployee" asp-route-id="@item.Id" style="color: darkred">@item.Name</a>
         <br/>
     }
     <br/>
-    
-    <a asp-controller="Home" asp-action="CreateEmployee">Add Employee</a>
+
+
 </div>
