@@ -1,0 +1,15 @@
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model EmployeesMVC.Models.Employee
+<h3>Create Employee</h3>
+
+<form asp-controller="Home" asp-action="CreateEmployee">
+    <label asp-for="Name"></label>
+    <input asp-for="Name"/>
+    <span asp-validation-for="Name"></span>
+    
+    <label asp-for="Email"></label>
+    <input asp-for="Email"/>
+    <span asp-validation-for="Email"></span>
+    
+    <input type="submit" value="Add Employee"/>
+</form>
